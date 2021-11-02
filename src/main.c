@@ -23,7 +23,8 @@ void	clear_window(t_fdf *list)
 void	ft_esc_exit(t_fdf *databox)
 {
 	mlx_destroy_image(databox->mlx_ptr, databox->img_ptr);
-	ft_clean_2_mass(databox->z_matrix, databox);
+    mlx_destroy_window(databox->mlx_ptr, databox->win_ptr);//добавил, чтобы убрать лики при выходе
+    ft_clean_2_mass(databox->z_matrix, databox);
 	ft_clean_2_mass(databox->color_matrix, databox);
 	exit(0);
 }
